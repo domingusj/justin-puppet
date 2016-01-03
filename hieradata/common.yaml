@@ -1,5 +1,10 @@
 ---
 
+main_domain: 'justindomingus.com'
+private_network: '192.168.2.0/24'
+
+reverse_zone: '2.168.192'
+
 ntp::servers:
   - 0.us.pool.ntp.org
   - 1.us.pool.ntp.org
