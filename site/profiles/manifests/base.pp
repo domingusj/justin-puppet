@@ -33,7 +33,7 @@ class profiles::base {
           'tree',
           'htop',
           'software-properties-common',
-          'ruby2.2'
+          'build-essential',
       ]:
       ensure => installed,
   }
@@ -52,6 +52,7 @@ class profiles::base {
           ]:
     ensure   => installed,
     provider => 'gem',
+    require  => Apt::Ppa['ppa:brightbox/ruby-ng'],
   }
 
   class { 'nrpe': }
