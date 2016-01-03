@@ -13,7 +13,8 @@ class profiles::common {
     package {[
             'vim',
             'sudo',
-            'screen'
+            'screen',
+            'tree'
         ]:
         ensure => present,
     }
