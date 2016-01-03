@@ -6,8 +6,7 @@ ntp::servers:
   - 0.us.pool.ntp.org
   - 1.us.pool.ntp.org
 
-
-  users_common:
+users_common:
   justin:
     ensure: present
     uid: 500
@@ -18,6 +17,6 @@ ntp::servers:
     password: '$6$MkSX/cPrrSTdbtor$L2L55lyyRc.BsOuPVmxRCWkrihNu1Uj/5C02CnduKbLZFgDy.386d5RjmHUVC/sR4cdhPaRzDVpdviN601COy1'
     shell:  /bin/bash
     ssh_authorized_keys:
-      userkey:
+      mykey:
         type: 'ssh-rsa'
-        key:  'AAAAB3NzaC1yc2EAAAADAQABAAACAQCl/JaJTdtrbWWrK3EPjxzwxEvY8332i5NMcMwiYG/cqfAews5nJQLyodbEa1OmHaXiJRdNvYU9yBsXMtyIKXnm7Oj2cTBzw3cZzcZkug6YcTSA3p9hA6zCmcC406z5rBRxBrqIapjBFWOdHK99QWaR8MZhMb30Tg8fwnnuW7pr+AQOi16pXJvW4WoYAMUvvezXHvi9ZrKdQ4vE0p9/4UJx3TbmkR91Myvc/ooa9gRcwgQpmLzWYYSLimDLMNmFhbzZj8+wXLgGx1RFQkYIWEn2NNN0Ghi+RzQu2n5UykSD6IL+2HeChdQxWR4yxVBNHYcj1/8d7Kd2ukPCDLs8nywK9+3avnyGhUBXdVycXCPE14dnSrvWQ22ugyNiNb7be5hDHntdH/U4U576Jt3PnnTlOSPqplRxl9XHGvtdDTxC9gNL50yEJBVHu539AaYWUdNjCgwTRjqWewTD3RYM4+gxdgXeKYz8VVv7XyM1ieGuVUmJ76m4GOWFP6jlYMJjr1UV4Kyxz0sR2lc4m9S8wSKon9DN9FpSILA5iorzaQ0S8JhN+EEi5I0xTasq/NEu46Yy7WdLuHnJh6MqAmpblg1RWlgB28ii85jRGUTSy7v0u3nzk0BpODpJoMjQ7yrsOGd5ztHdZ5dFLaw5PE1mGI3twUzN6t7ExIeMyYi5SXRg2Q=='
+        key: 'AAAAB3NzaC1yc2EAAAADAQABAAACAQCl/JaJTdtrbWWrK3EPjxzwxEvY8332i5NMcMwiYG/cqfAews5nJQLyodbEa1OmHaXiJRdNvYU9yBsXMtyIKXnm7Oj2cTBzw3cZzcZkug6YcTSA3p9hA6zCmcC406z5rBRxBrqIapjBFWOdHK99QWaR8MZhMb30Tg8fwnnuW7pr+AQOi16pXJvW4WoYAMUvvezXHvi9ZrKdQ4vE0p9/4UJx3TbmkR91Myvc/ooa9gRcwgQpmLzWYYSLimDLMNmFhbzZj8+wXLgGx1RFQkYIWEn2NNN0Ghi+RzQu2n5UykSD6IL+2HeChdQxWR4yxVBNHYcj1/8d7Kd2ukPCDLs8nywK9+3avnyGhUBXdVycXCPE14dnSrvWQ22ugyNiNb7be5hDHntdH/U4U576Jt3PnnTlOSPqplRxl9XHGvtdDTxC9gNL50yEJBVHu539AaYWUdNjCgwTRjqWewTD3RYM4+gxdgXeKYz8VVv7XyM1ieGuVUmJ76m4GOWFP6jlYMJjr1UV4Kyxz0sR2lc4m9S8wSKon9DN9FpSILA5iorzaQ0S8JhN+EEi5I0xTasq/NEu46Yy7WdLuHnJh6MqAmpblg1RWlgB28ii85jRGUTSy7v0u3nzk0BpODpJoMjQ7yrsOGd5ztHdZ5dFLaw5PE1mGI3twUzN6t7ExIeMyYi5SXRg2Q=='

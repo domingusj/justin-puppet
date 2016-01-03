@@ -16,7 +16,7 @@ class profiles::base {
   # base firewall config
   include profiles::firewall::setup
 
-  # common packages needed everywhere
+  #common packages needed everywhere
   package {[
           'vim',
           'sudo',
