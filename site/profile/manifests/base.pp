@@ -14,7 +14,7 @@ class profile::base {
   }
 
   # base firewall config
-  include profiles::firewall::setup
+  include profile::firewall::setup
 
   # common packages needed everywhere
   package {[
