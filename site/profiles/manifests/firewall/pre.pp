@@ -35,9 +35,4 @@ class profiles::firewall::pre {
         action => 'accept',
     }
 
-    firewall {'005 dns 53':
-        dport  => '53',
-        proto  => 'udp',
-        action => 'accept',
-    }
 }

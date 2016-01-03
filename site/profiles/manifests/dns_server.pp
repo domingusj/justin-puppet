@@ -5,4 +5,10 @@ class profiles::dns_server {
     ensure => installed,
   }
 
+  firewall {'005 dns 53':
+      dport  => '53',
+      proto  => 'udp',
+      action => 'accept',
+  }
+
 }
