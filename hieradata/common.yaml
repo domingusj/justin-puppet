@@ -1,6 +1,6 @@
 ---
 classes:
- - 'profiles::base'
+  - roles::default
 
 ntp::servers:
   - 0.us.pool.ntp.org
