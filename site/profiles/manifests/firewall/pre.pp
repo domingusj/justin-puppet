@@ -1,5 +1,8 @@
 # First off, basic firewall rules
 class profiles::firewall::pre {
+
+  $private_network = hiera ('private_network')
+
     Firewall {
       require => undef,
     }
@@ -32,6 +35,7 @@ class profiles::firewall::pre {
     firewall { '004 ssh 22':
         dport  => '22',
         proto  => 'tcp',
+        source => $private_network,
         action => 'accept',
     }
 
