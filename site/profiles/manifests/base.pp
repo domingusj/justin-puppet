@@ -19,6 +19,8 @@ class profiles::base {
   #common packages needed everywhere
   package {[
           'vim',
+          'curl',
+          'wget',
           'git',
           'sudo',
           'screen',
