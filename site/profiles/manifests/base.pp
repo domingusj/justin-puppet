@@ -2,6 +2,8 @@
 
 class profiles::base {
 
+  include apt
+
   # common users
   users { 'common': }
 
@@ -16,6 +18,10 @@ class profiles::base {
   # base firewall config
   include profiles::firewall::setup
 
+  apt::ppa { 'ppa:brightbox/ruby-ng':
+    notify  => Exec['apt_update'],
+    require => Package['software-properties-common'],
+  }
   #common packages needed everywhere
   package {[
           'vim',
@@ -25,9 +31,26 @@ class profiles::base {
           'sudo',
           'screen',
           'tree',
-          'htop'
+          'htop',
+          'software-properties-common',
+          'ruby2.2'
       ]:
-      ensure => present,
+      ensure => installed,
+  }
+
+  class { 'ruby':
+    version            => '2.2',
+    set_system_default => true,
+    latest_release     => true,
+    require            => Apt::Ppa['ppa:brightbox/ruby-ng'],
+  }
+
+  #ruby gems to install
+  package {[
+          'json'
+          ]:
+    ensure   => installed,
+    provider => 'gem',
   }
 
   class { 'nrpe': }

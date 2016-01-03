@@ -1,6 +1,7 @@
 forge 'forge.puppetlabs.com'
 
 # Forge Modules
+mod 'puppetlabs/ruby'
 mod 'puppetlabs/ntp', '4.1.2'
 mod 'puppetlabs/stdlib'
 mod 'puppetlabs/puppetdb'
@@ -16,3 +17,7 @@ mod 'theforeman/foreman'
 mod 'icinga/icingaweb2'
 mod 'dwerder/graphite'
 mod 'pdxcat/nrpe'
+mod 'maestrodev/wget'
+mod 'sensu/sensu'
+mod 'arioch-redis'
+mod 'puppetlabs/rabbitmq'
