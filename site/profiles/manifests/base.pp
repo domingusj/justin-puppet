@@ -42,6 +42,7 @@ class profiles::base {
     version            => '2.2',
     set_system_default => true,
     latest_release     => true,
+    gems_version       => 'latest',
     require            => Apt::Ppa['ppa:brightbox/ruby-ng'],
   }
 
