@@ -39,4 +39,11 @@ class profiles::firewall::pre {
         action => 'accept',
     }
 
+    firewall { '005 nrpe 5666':
+        dport  => '5666',
+        proto  => 'tcp',
+        source => $private_network,
+        action => 'accept',
+    }
+
 }

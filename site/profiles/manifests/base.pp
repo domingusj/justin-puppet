@@ -30,4 +30,6 @@ class profiles::base {
       ensure => present,
   }
 
+  class { 'nrpe': }
+
 }

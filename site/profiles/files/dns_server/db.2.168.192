@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	core1.justindomingus.com. admin.justindomingus.com. (
-			 010220161  ; Serial
+			 010320161  ; Serial
 			 604800		  ; Refresh
 			 86400		  ; Retry
 			 2419200		; Expire
@@ -21,3 +21,4 @@ $TTL	604800
 102.2.168  IN      PTR     puppet1.justindomingus.com.
 103.2.168  IN      PTR     icinga1.justindomingus.com.
 104.2.168  IN      PTR     graphite1.justindomingus.com.
+105.2.168  IN      PTR     nagios1.justindomingus.com.
