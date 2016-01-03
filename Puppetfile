@@ -1,8 +1,6 @@
-forge "http://forge.puppetlabs.com"
+forge 'forge.puppetlabs.com'
 
-mod 'mthibaut/users'
-mod 'puppetlabs/concat'
-mod 'puppetlabs/firewall'
+# Forge Modules
+mod 'puppetlabs/ntp', '4.1.0'
 mod 'puppetlabs/stdlib'
-mod 'saz/locales'
-mod 'puppetlabs-puppetdb'
+mod 'puppetlabs/puppetdb'
