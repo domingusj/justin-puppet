@@ -1,4 +1,7 @@
 ---
+classes:
+ - 'profile::common'
+
 users_common:
   {justin}:
     ensure: present
