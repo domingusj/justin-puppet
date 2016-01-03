@@ -23,17 +23,17 @@ $reverse_zone = hiera ('reverse_zone')
 
   file { 'forward_dns':
     ensure => file,
-    path   => "${etc/zones/db.$main_domain}",
+    path   => "/etc/zones/db.${main_domain}",
     mode   => '0644',
-    source => "puppet:///modules/profiles/dns_server/db.$main_domain",
+    source => "puppet:///modules/profiles/dns_server/db.${main_domain}",
     notify => Service['bind9'],
   }
 
   file { 'reverse_dns':
     ensure => file,
-    path   => "${etc/zones/db.$reverse_zone}",
+    path   => "/etc/zones/db.${reverse_zone}",
     mode   => '0644',
-    source => "puppet:///modules/profiles/dns_server/db.$reverse_zone",
+    source => "puppet:///modules/profiles/dns_server/db.${reverse_zone}",
     notify => Service['bind9'],
   }
 
