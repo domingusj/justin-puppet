@@ -14,6 +14,8 @@ mod 'puppetlabs/vcsrepo'
 mod 'mthibaut/users'
 mod 'saz/locales'
 mod 'theforeman/foreman'
+mod 'icinga',
+  git: => 'https://github.com/Icinga/puppet-icinga2'
 mod 'icinga/icingaweb2'
 mod 'dwerder/graphite'
 mod 'pdxcat/nrpe'
