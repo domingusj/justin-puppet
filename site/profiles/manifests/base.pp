@@ -40,6 +40,8 @@ class profiles::base {
 
   class { 'ruby':
     version            => '2.2',
+    ruby_package       => 'ruby2.2',
+    system_default_bin => '/usr/bin/ruby2.2',
     set_system_default => true,
     latest_release     => true,
     gems_version       => 'latest',
