@@ -26,10 +26,12 @@ users_common:
 
 nrpe:
   allowed_hosts:
-    -192.168.2.105
-    -nagios1.justindomingus.com
+    - 192.168.2.105
+    - nagios1.justindomingus.com
 
 foreman::unattended:  true
 foreman::db_type:     'sqlite'
 foreman::admin_username:  'admin'
 foreman::admin_password:  'admin'
+
+icinga_db_pw: '7asdmJ$ldf1'
