@@ -1,6 +1,7 @@
 forge 'forge.puppetlabs.com'
 
 # Forge Modules
+mod 'puppetlabs/java'
 mod 'puppetlabs/ruby'
 mod 'puppetlabs/ntp', '4.1.2'
 mod 'puppetlabs/stdlib'
