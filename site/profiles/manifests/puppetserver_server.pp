@@ -8,5 +8,6 @@ class profiles::puppetserver_server {
   }
 
   include puppetdb
+  include ::puppetdb::master::config
 
 }
