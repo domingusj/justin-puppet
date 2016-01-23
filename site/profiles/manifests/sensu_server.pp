@@ -5,4 +5,10 @@ class profiles::sensu_server {
 
   class { 'sensu': }
 
+  include 'erlang'
+
+  package { 'erlang-base':
+    ensure => 'latest',
+  }
+
 }
