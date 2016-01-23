@@ -1,3 +1,4 @@
 ---
 sensu::server: true
+sensu::api: true
 uchiwa::install_repo: false
