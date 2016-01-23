@@ -6,4 +6,5 @@ node default {
   if $::hostname =~ /^icinga\d{1,2}$/ { include roles::icinga }
   if $::hostname =~ /^graphite\d{1,2}$/ { include roles::graphite }
   if $::hostname =~ /^nagios\d{1,2}$/ { include roles::nagios }
+  if $::hostname =~ /^sensu\d{1,2}$/ { include roles::sensu }
 }
