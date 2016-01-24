@@ -7,16 +7,4 @@ class profiles::puppetserver_server {
     action => 'accept',
   }
 
-  firewall { '101 foreman 443':
-    dport  => '443',
-    proto  => 'tcp',
-    action => 'accept',
-  }
-
-  class { '::puppet':
-    server                => true,
-    server_implementation => 'puppetserver',
-    server_environments   => [],
-  }
-
 }
