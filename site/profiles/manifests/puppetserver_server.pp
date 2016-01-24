@@ -7,7 +7,9 @@ class profiles::puppetserver_server {
     action => 'accept',
   }
 
-  include puppetdb
-  include ::puppetdb::master::config
+  class { '::puppet':
+    server         => true,
+    server_foreman => true,
+  }
 
 }

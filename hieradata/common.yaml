@@ -3,6 +3,7 @@
 ###########
 # Classes #
 ###########
+
 sensu::install_repo: true
 sensu::purge:
   config: true
@@ -10,14 +11,10 @@ sensu::rabbitmq_host: 192.168.2.110
 sensu::rabbitmq_password: password
 sensu::rabbitmq_port: 5672
 
-#############
-# Variables #
-#############
-
-main_domain: 'justindomingus.com'
-private_network: '192.168.2.0/24'
-
-reverse_zone: '2.168.192'
+nrpe:
+  allowed_hosts:
+    - 192.168.2.105
+    - nagios1.justindomingus.com
 
 ntp::servers:
   - 0.us.pool.ntp.org
@@ -38,14 +35,14 @@ users_common:
         type: 'ssh-rsa'
         key: 'AAAAB3NzaC1yc2EAAAADAQABAAACAQCl/JaJTdtrbWWrK3EPjxzwxEvY8332i5NMcMwiYG/cqfAews5nJQLyodbEa1OmHaXiJRdNvYU9yBsXMtyIKXnm7Oj2cTBzw3cZzcZkug6YcTSA3p9hA6zCmcC406z5rBRxBrqIapjBFWOdHK99QWaR8MZhMb30Tg8fwnnuW7pr+AQOi16pXJvW4WoYAMUvvezXHvi9ZrKdQ4vE0p9/4UJx3TbmkR91Myvc/ooa9gRcwgQpmLzWYYSLimDLMNmFhbzZj8+wXLgGx1RFQkYIWEn2NNN0Ghi+RzQu2n5UykSD6IL+2HeChdQxWR4yxVBNHYcj1/8d7Kd2ukPCDLs8nywK9+3avnyGhUBXdVycXCPE14dnSrvWQ22ugyNiNb7be5hDHntdH/U4U576Jt3PnnTlOSPqplRxl9XHGvtdDTxC9gNL50yEJBVHu539AaYWUdNjCgwTRjqWewTD3RYM4+gxdgXeKYz8VVv7XyM1ieGuVUmJ76m4GOWFP6jlYMJjr1UV4Kyxz0sR2lc4m9S8wSKon9DN9FpSILA5iorzaQ0S8JhN+EEi5I0xTasq/NEu46Yy7WdLuHnJh6MqAmpblg1RWlgB28ii85jRGUTSy7v0u3nzk0BpODpJoMjQ7yrsOGd5ztHdZ5dFLaw5PE1mGI3twUzN6t7ExIeMyYi5SXRg2Q=='
 
-nrpe:
-  allowed_hosts:
-    - 192.168.2.105
-    - nagios1.justindomingus.com
 
-foreman::unattended:  true
-foreman::db_type:     'sqlite'
-foreman::admin_username:  'admin'
-foreman::admin_password:  'admin'
+#############
+# Variables #
+#############
+
+main_domain: 'justindomingus.com'
+private_network: '192.168.2.0/24'
+
+reverse_zone: '2.168.192'
 
 icinga_db_pw: '7asdmJ$ldf1'
