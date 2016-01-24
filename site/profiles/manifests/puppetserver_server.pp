@@ -14,9 +14,13 @@ class profiles::puppetserver_server {
   }
 
     class { '::puppet':
-      server                => true,
-      server_implementation => 'puppetserver',
-      server_environments   => [],
+      server                      => true,
+      server_implementation       => 'puppetserver',
+      server_environments         => [],
+      server_puppetdb_host        => hiera('puppet_master'),
+      server_reports              => 'puppetdb,foreman',
+      server_storeconfigs_backend => 'puppetdb',
+
   }
 
 }

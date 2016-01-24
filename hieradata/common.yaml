@@ -42,9 +42,11 @@ users_common:
 # Variables #
 #############
 
-main_domain: 'justindomingus.com'
+puppet_master:   'puppet1.justindomingus.com'
+
+main_domain:     'justindomingus.com'
 private_network: '192.168.2.0/24'
 
-reverse_zone: '2.168.192'
+reverse_zone:    '2.168.192'
 
-icinga_db_pw: '7asdmJ$ldf1'
+icinga_db_pw:    '7asdmJ$ldf1'
