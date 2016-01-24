@@ -5,7 +5,11 @@ class profiles::jenkins_server {
 
   class { 'jenkins':
     configure_firewall => true,
-    port               => '8880',
+    port               => '9090',
+    config_hash        => {
+      'HTTP_PORT' => { 'value' => '9090' },
+      'AJP_PORT'  => { 'value' => '9009' }
+    },
   }
 
 }
