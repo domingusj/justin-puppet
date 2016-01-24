@@ -38,11 +38,6 @@ class profiles::base {
       ensure => installed,
   }
 
-  package { 'ruby-json':
-    ensure   => installed,
-    provider => 'gem',
-  }
-
   class { 'ruby':
     version            => '2.2',
     ruby_package       => 'ruby2.2',

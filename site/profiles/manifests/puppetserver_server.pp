@@ -8,8 +8,9 @@ class profiles::puppetserver_server {
   }
 
   class { '::puppet':
-    server         => true,
-    server_foreman => true,
+    server                => true,
+    server_implementation => 'puppetserver',
+    server_environments   => [],
   }
 
 }
