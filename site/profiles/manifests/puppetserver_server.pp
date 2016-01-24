@@ -17,7 +17,7 @@ class profiles::puppetserver_server {
       server                      => true,
       server_implementation       => 'puppetserver',
       server_environments         => [],
-      server_puppetdb_host        => hiera('puppet_master'),
+      server_puppetdb_host        => hiera('puppetdb_server'),
       server_reports              => 'puppetdb,foreman',
       server_storeconfigs_backend => 'puppetdb',
 
