@@ -4,7 +4,8 @@
 # Classes #
 ###########
 
-foreman::puppet_etcdir: '/etc/puppetlabs/puppet'
+foreman::puppetmaster:
+  puppet_etcdir: '/etc/puppetlabs/puppet'
 
 sensu::install_repo: true
 sensu::purge:
