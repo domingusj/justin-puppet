@@ -42,8 +42,6 @@ users_common:
 # Variables #
 #############
 
-puppetdb_server:   'puppetdb1.justindomingus.com'
-
 main_domain:     'justindomingus.com'
 private_network: '192.168.2.0/24'
 
