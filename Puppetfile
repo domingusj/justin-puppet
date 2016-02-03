@@ -18,8 +18,8 @@ mod 'puppetlabs/git'
 mod 'puppetlabs/postgresql'
 mod 'mthibaut/users'
 mod 'saz/locales'
-mod 'theforeman/foreman'
 mod 'theforeman/puppet'
+mod 'nibalizer-puppetboard'
 mod 'icinga',
   :git => 'https://github.com/Icinga/puppet-icinga2',
   :branch => 'master'

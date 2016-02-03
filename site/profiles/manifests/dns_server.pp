@@ -1,7 +1,7 @@
 #DNS server
 class profiles::dns_server {
 
-$main_domain = hiera ('main_domain')
+$main_domain  = hiera ('main_domain')
 $reverse_zone = hiera ('reverse_zone')
 
   firewall {'005 dns 53':

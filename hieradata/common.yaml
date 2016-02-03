@@ -1,10 +1,17 @@
 ---
+# Hierarchy is
+#  node
+#  env (dev, etc)
+#  common
 
 ###########
 # Classes #
 ###########
 
-foreman::puppetmaster::puppet_etcdir: '/etc/puppetlabs/puppet'
+puppet::puppetmaster:         'puppet1.dev.justindomingus.com'
+puppet::server_puppetdb_host: 'puppet1.dev.justindomingus.com'
+puppet::version:              'latest'
+
 
 sensu::install_repo: true
 sensu::purge:
@@ -16,7 +23,7 @@ sensu::rabbitmq_port: 5672
 nrpe:
   allowed_hosts:
     - 192.168.2.105
-    - nagios1.justindomingus.com
+    - nagios1.dev.justindomingus.com
 
 ntp::servers:
   - 0.us.pool.ntp.org
@@ -42,11 +49,11 @@ users_common:
 # Variables #
 #############
 
-puppetdb_server: 'puppet1.justindomingus.com'
+puppetdb_server: 'puppet1.dev.justindomingus.com'
 
-main_domain:     'justindomingus.com'
-private_network: '192.168.2.0/24'
+main_domain:     'dev.justindomingus.com'
+private_network: '10.2.0.0/24'
 
-reverse_zone:    '2.168.192'
+reverse_zone:    '0.2.10'
 
 icinga_db_pw:    '7asdmJ$ldf1'

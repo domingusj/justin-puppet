@@ -1,0 +1,20 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	core1.dev.justindomingus.com. admin.justindomingus.com. (
+			 020220161  ; Serial
+			 604800		  ; Refresh
+			 86400		  ; Retry
+			 2419200		; Expire
+			 604800 )	  ; Negative Cache TTL
+;
+
+; name servers
+      IN      NS      core1.dev.justindomingus.com.
+      IN      NS      core2.dev.justindomingus.com.
+
+; PTR Records
+5.0.2   IN      PTR     core1.dev.justindomingus.com.
+6.0.2   IN      PTR     core2.dev.justindomingus.com.
+10.0.2  IN      PTR     puppet1.dev.justindomingus.com.
