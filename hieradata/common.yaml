@@ -4,6 +4,8 @@
 #  env (dev, etc)
 #  common
 
+hiera_datasource: 'common'
+
 ###########
 # Classes #
 ###########

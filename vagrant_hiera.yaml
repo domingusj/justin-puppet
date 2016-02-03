@@ -1,0 +1,11 @@
+---
+:backends:
+  - yaml
+
+:yaml:
+  :datadir: "/vagrant/puppet/environments/production/hieradata"
+
+:hierarchy:
+  - "nodes/%{::clientcert}"
+  - "env/%{::location}"
+  - common

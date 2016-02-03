@@ -4,6 +4,8 @@
 #  env (dev, etc)
 #  common
 
+hiera_datasource: 'sensu1.dev.justindomingus.com'
+
 ###########
 # Classes #
 ###########
