@@ -1,7 +1,9 @@
 ---
 # Hierarchy is
 #  node
-#  env (dev, etc)
+#  env.location
+#  env (dev)
+#  location
 #  common
 
 hiera_datasource: 'sensu1.dev.justindomingus.com'

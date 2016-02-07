@@ -3,9 +3,11 @@
   - yaml
 
 :yaml:
-  :datadir: "/vagrant/puppet/environments/production/hieradata"
+  :datadir: "/etc/puppetlabs/code/environments/%{::environment}/hieradata"
 
 :hierarchy:
-  - "nodes/%{::clientcert}"
-  - "env/%{::location}"
+  - "node/%{::clientcert}"
+  - "%{::location}/%{::env}.%{::location}"
+  - "env/%{::env}"
+  - "%{::location}/%{::location}"
   - common

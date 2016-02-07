@@ -6,7 +6,7 @@
 #  location
 #  common
 
-hiera_datasource: 'dev'
+hiera_datasource: 'den'
 
 ###########
 # Classes #
