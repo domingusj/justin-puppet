@@ -2,7 +2,7 @@ node default {
 
   # environment: (env)
   case $::domain {
-    /.*dev.*/: { $env         = 'dev' }
+    /.*dev.*/: { $env = 'dev' }
     default: {fail("Domain ${::domain} is not supported in this site.pp") }
   }
 

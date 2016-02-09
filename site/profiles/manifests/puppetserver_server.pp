@@ -1,11 +1,8 @@
 #Puppetserver server
 class profiles::puppetserver_server {
 
-  class { '::puppet':
-    server                => true,
-    server_implementation => 'puppetserver',
-    server_foreman        => false,
-  }
+  class { 'puppetserver::repository': } ->
+  class { 'puppetserver': }
 
   # firewall rules
   firewall { '100 puppet 8140':

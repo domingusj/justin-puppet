@@ -34,9 +34,9 @@ def add_server(ip, hostname, distro, config, port_forwards = [])
       config.vm.network :forwarded_port, guest: guest_port, host: host_port, :protocol  => protocol
     end
 
-    # Shell provision - ubuntu only
+    # Shell provision - WIP
     if hostname =~ /^puppet.*/
-      host_config.vm.provision "shell", inline: <<-SHELL
+      host_config.vm.provision "puppet_master" do |puppet_master|
         sudo apt-get -y update
         sudo apt-get -y install git
         sudo /opt/puppetlabs/puppet/bin/gem install r10k
@@ -45,11 +45,14 @@ def add_server(ip, hostname, distro, config, port_forwards = [])
         sudo /opt/puppetlabs/puppet/bin/r10k deploy environment -p -v
         SHELL
     else
-      host_config.vm.provision "shell", inline: <<-SHELL
-        sudo apt-get -y update
-        sudo echo "10.2.0.10 puppet1.dev.den.justindomingus.com puppet1" >> /etc/hosts
-        sudo puppet agent -t --server puppet1.dev.den.justindomingus.com
-        SHELL
-    end
+      host_config.vm.provision "puppet" do |puppet|
+        puppet.puppet_server = "puppet1.dev.den.justindomingus.com"
+        puppet.manifest_file = "site.pp"
+        puppet.hiera_config_path = "hiera.yaml"
+        puppet.options = '--debug --verbose'
+        puppet.facter = {
+          "vagrant_bootstrap" => "1"
+        }
+      end
   end
 end
