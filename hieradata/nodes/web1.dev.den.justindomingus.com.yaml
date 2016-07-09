@@ -6,4 +6,4 @@
 #  location
 #  common
 
-hiera_datasource: 'dns1.dev.justindomingus.com'
+hiera_datasource: 'web1.dev.den.justindomingus.com'

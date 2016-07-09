@@ -6,7 +6,7 @@
 #  location
 #  common
 
-hiera_datasource: 'sensu1.dev.justindomingus.com'
+hiera_datasource: 'sensu1.dev.den.justindomingus.com'
 
 ###########
 # Classes #
