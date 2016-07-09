@@ -12,6 +12,10 @@ node default {
   #  default: { fail("Location ${::domain} is not supported in this site.pp") }
   #}
 
+  if $::osfamily == 'Debian' {
+    include profiles::common::debian_node
+  }
+
   include roles::default
 
   if $::hostname =~ /^puppet\d{1,2}$/   { include roles::puppetserver }

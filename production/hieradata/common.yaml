@@ -53,11 +53,4 @@ users_common:
 # Variables #
 #############
 
-puppetdb_server: 'puppet1.dev.justindomingus.com'
-
-main_domain:     'dev.justindomingus.com'
-private_network: '10.2.0.0/24'
-
-reverse_zone:    '0.2.10'
-
-icinga_db_pw:    '7asdmJ$ldf1'
+private_network: '10.0.0.0/8'

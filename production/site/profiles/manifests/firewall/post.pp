@@ -1,5 +1,6 @@
 # Last in firewall rules
 class profiles::firewall::post {
+
     firewall { '998 drop all':
         chain  => 'INPUT',
         proto  => 'all',

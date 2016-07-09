@@ -46,4 +46,13 @@ class profiles::firewall::pre {
         action => 'accept',
     }
 
+
+    firewall { '997 LOG iptables denied':
+      proto      => 'all',
+      jump       => 'LOG',
+      limit      => '5/min',
+      log_prefix => 'iptables denied',
+      log_level  => '7',
+    }
+
 }

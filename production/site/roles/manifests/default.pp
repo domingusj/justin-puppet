@@ -1,4 +1,4 @@
 # default server role
 class roles::default {
-    include profiles::base
+    include profiles::common::base
 }
