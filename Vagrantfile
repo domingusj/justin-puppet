@@ -27,7 +27,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
       config.landrush.tld = "dev.den.justindomingus.com"
       config.vm.provision "puppet" do |puppet|
+        puppet.manifests_path = "."
         puppet.manifest_file = "site.pp"
+        puppet.module_path = ["site", "forge"]
+        puppet.hiera_config_path = "hiera.yaml"
       end
     end
   end
