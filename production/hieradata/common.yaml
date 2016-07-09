@@ -53,4 +53,4 @@ users_common:
 # Variables #
 #############
 
-private_network: '10.0.0.0/8'
+private_network: '0.0.0.0/0'

@@ -1,17 +1,18 @@
 node default {
 
-  ## environment: (env)
-  #case $::domain {
-  #  /.*dev.*/: { $env = 'dev' }
-  #  default: {fail("Environment ${::domain} is not supported in this site.pp") }
-  #}
+  # classification by environment: (env)
+  case $::domain {
+    /.*dev.*/: { $env = 'dev' }
+    default: {fail("Environment ${::domain} is not supported in this site.pp") }
+  }
 
-  ## location
-  #case $::domain {
-  #  /^.*den\.justindomingus\.com$/: { $location = 'den' }
-  #  default: { fail("Location ${::domain} is not supported in this site.pp") }
-  #}
+  # classification by location
+  case $::domain {
+    /^.*den\.justindomingus\.com$/: { $location = 'den' }
+    default: { fail("Location ${::domain} is not supported in this site.pp") }
+  }
 
+  # classification by operating systems
   if $::osfamily == 'Debian' {
     include profiles::common::debian_node
   }
@@ -19,11 +20,14 @@ node default {
     include profiles::common::redhat_node
   }
   else {
-    fail ("$::osfamily is not yet supported by this Puppet repo")
+    fail("$::osfamily is not yet supported by this Puppet repo")
   }
 
+  # every node should get the default role and base profile
   include roles::default
 
+
+  # classification by hostname, which determines specific role
   if $::hostname =~ /^puppet\d{1,2}$/   { include roles::puppetserver }
   if $::hostname =~ /^icinga\d{1,2}$/   { include roles::icinga }
   if $::hostname =~ /^graphite\d{1,2}$/ { include roles::graphite }

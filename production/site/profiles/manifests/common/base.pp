@@ -2,6 +2,10 @@
 
 class profiles::common::base {
 
+  class { 'motd':
+    content => "# This node is managed by Puppet ${::clientversion}\n# Environment: ${env}\n# Location: ${location}\n"
+  }
+
   # common users
   users { 'common': }
 

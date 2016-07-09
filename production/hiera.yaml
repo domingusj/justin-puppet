@@ -7,7 +7,7 @@
 
 :hierarchy:
   - "nodes/%{::clientcert}"
-  #- "%{::location}/%{::env}.%{::location}"
-  #- "env/%{::env}"
-  #- "%{::location}/%{::location}"
+  - "%{::location}/%{::env}.%{::location}"
+  - "env/%{::env}"
+  - "%{::location}/%{::location}"
   - common

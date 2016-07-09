@@ -27,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
       config.landrush.tld = "dev.den.justindomingus.com"
       config.vm.provision "puppet" do |puppet|
-        puppet.options = "--verbose --debug"
+        #puppet.options = "--verbose --debug"
         puppet.environment_path = "."
         puppet.environment = "production"
         puppet.hiera_config_path = "production/hiera.yaml"
