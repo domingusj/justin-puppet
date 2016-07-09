@@ -1,4 +1,4 @@
-#base profile everyone gets
+# base profile everyone gets
 
 class profiles::common::base {
 

@@ -15,6 +15,12 @@ node default {
   if $::osfamily == 'Debian' {
     include profiles::common::debian_node
   }
+  elsif $::osfamily == 'RedHat' {
+    include profiles::common::redhat_node
+  }
+  else {
+    fail ("$::osfamily is not yet supported by this Puppet repo")
+  }
 
   include roles::default
 
