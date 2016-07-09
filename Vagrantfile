@@ -28,10 +28,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       config.landrush.tld = "dev.den.justindomingus.com"
       config.vm.provision "puppet" do |puppet|
         puppet.options = "--verbose --debug"
-        puppet.manifests_path = "."
-        puppet.manifest_file = "site.pp"
-        puppet.module_path = ["site", "forge"]
-        puppet.hiera_config_path = "hiera.yaml"
+        puppet.environment_path = "."
+        puppet.environment = "production"
       end
     end
   end
