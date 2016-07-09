@@ -1,0 +1,9 @@
+---
+# Hierarchy is
+#  node
+#  env.location
+#  env (dev)
+#  location
+#  common
+
+hiera_datasource: 'dns1.dev.justindomingus.com'

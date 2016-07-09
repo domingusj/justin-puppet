@@ -27,6 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
       config.landrush.tld = "dev.den.justindomingus.com"
       config.vm.provision "puppet" do |puppet|
+        puppet.options = "--verbose --debug"
         puppet.manifests_path = "."
         puppet.manifest_file = "site.pp"
         puppet.module_path = ["site", "forge"]

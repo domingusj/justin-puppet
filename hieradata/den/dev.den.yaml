@@ -1,0 +1,13 @@
+---
+# Hierarchy is
+#  node
+#  env.location
+#  env (dev)
+#  location
+#  common
+
+hiera_datasource: 'dev.den'
+
+###########
+# Classes #
+###########
