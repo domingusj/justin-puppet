@@ -1,16 +1,16 @@
 node default {
 
-  # environment: (env)
-  case $::domain {
-    /.*dev.*/: { $env = 'dev' }
-    default: {fail("Domain ${::domain} is not supported in this site.pp") }
-  }
+  ## environment: (env)
+  #case $::domain {
+    #/.*dev.*/: { $env = 'dev' }
+    #default: {fail("Domain ${::domain} is not supported in this site.pp") }
+  #}
 
-  # location
-  case $::domain {
-    /^.*den\.justindomingus\.comt$/: { $location = 'den' }
-    default: { fail("Domain ${::domain} is not supported in this site.pp") }
-  }
+  ## location
+  #case $::domain {
+    #/^.*den\.justindomingus\.comt$/: { $location = 'den' }
+    #default: { fail("Domain ${::domain} is not supported in this site.pp") }
+  #}
 
   include roles::default
 

@@ -1,0 +1,24 @@
+---
+- name: semaphore1.dev.den.justindomingus.com
+  box: ubuntu/trusty64
+  ram: 1024
+  cpus: 1
+  ip: 10.0.0.2
+
+- name: dns1.dev.den.justindomingus.com
+  box: ubuntu/trusty64
+  ram: 1024
+  cpus: 1
+  ip: 10.0.0.3
+
+- name: dns2.dev.den.justindomingus.com
+  box: ubuntu/trusty64
+  ram: 1024
+  cpus: 1
+  ip: 10.0.0.4
+
+- name: sensu1.dev.den.justindomingus.com
+  box: ubuntu/trusty64
+  ram: 1024
+  cpus: 1
+  ip: 10.0.0.5
