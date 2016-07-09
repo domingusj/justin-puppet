@@ -3,7 +3,7 @@
   - yaml
 
 :yaml:
-  :datadir: /vagrant/hieradata
+  :datadir: /vagrant/production/hieradata
 
 :hierarchy:
   - "nodes/%{::clientcert}"
