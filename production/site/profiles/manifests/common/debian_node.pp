@@ -1,9 +1,23 @@
 # common for all debian/ubuntu nodes
+
 class profiles::common::debian_node {
 
-  include apt
+  class { 'apt':
+    update => {
+    frequency => 'daily',
+    },
+  }
 
-  #common debian packages needed everywhere
+  apt::source { 'puppetlabs':
+  location => 'http://apt.puppetlabs.com',
+  repos    => 'main',
+  key      => {
+    'id'     => '47B320EB4C7C375AA9DAE1A01054B7A24BD6EC30',
+    'server' => 'pgp.mit.edu',
+    },
+  }
+
+  # common debian packages needed everywhere
   package {[
           'vim',
           'curl',
@@ -16,9 +30,8 @@ class profiles::common::debian_node {
           'software-properties-common',
           'build-essential',
       ]:
-      ensure => installed,
+      ensure  => installed,
+      require => Class['apt::update']
   }
-
-  class { 'nrpe': }
 
 }

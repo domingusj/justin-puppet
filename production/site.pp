@@ -12,7 +12,7 @@ node default {
     default: { fail("Location ${::domain} is not supported in this site.pp") }
   }
 
-  # classification by operating systems
+  # classification by OS family
   if $::osfamily == 'Debian' {
     include profiles::common::debian_node
   }
@@ -20,12 +20,16 @@ node default {
     include profiles::common::redhat_node
   }
   else {
-    fail("$::osfamily is not yet supported by this Puppet repo")
+    fail("${::osfamily} is not yet supported by this Puppet repo")
+  }
+
+  # classification by distro
+  if $::facts['os']['distro']['id'] == 'Ubuntu' {
+    include profiles::common::ubuntu_node
   }
 
   # every node should get the default role and base profile
   include roles::default
-
 
   # classification by hostname, which determines specific role
   if $::hostname =~ /^puppet\d{1,2}$/   { include roles::puppetserver }
