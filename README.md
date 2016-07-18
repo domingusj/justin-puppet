@@ -2,12 +2,10 @@
 
 ## Setup ##
 
-```gem install r10k```
+```bundle install```
 
 ```vagrant plugin install landrush # for DNS```
 
-```cd production```
-
-```r10k puppetfile install --moduledir=forge```
+```r10k puppetfile install --moduledir=production/forge```
 
 Add new nodes to the `servers.yaml` file

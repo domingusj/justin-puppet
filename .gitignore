@@ -3,5 +3,3 @@
 .svn
 .vagrant
 forge
-.kitchen/
-.kitchen.local.yml
