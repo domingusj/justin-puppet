@@ -38,5 +38,6 @@ node default {
   if $::hostname =~ /^nagios\d{1,2}$/   { include roles::nagios }
   if $::hostname =~ /^sensu\d{1,2}$/    { include roles::sensu }
   if $::hostname =~ /^web\d{1,2}$/      { include roles::web }
+  if $::hostname =~ /^hubot\d{1,2}$/     { include roles::hubot }
 
 }

@@ -22,3 +22,9 @@
   ram: 1024
   cpus: 1
   ip: 10.0.0.5
+
+- name: hubot1.dev.den.justindomingus.com
+  box: puppetlabs/ubuntu-14.04-64-puppet
+  ram: 1024
+  cpus: 1
+  ip: 10.0.0.6
