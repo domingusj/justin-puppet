@@ -54,3 +54,5 @@ users_common:
 #############
 
 private_network: '0.0.0.0/0'
+
+lita_slack_token: 'xoxb-SOMETHING'

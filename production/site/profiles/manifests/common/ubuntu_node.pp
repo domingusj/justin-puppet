@@ -3,25 +3,31 @@
 class profiles::common::ubuntu_node {
 
   # Ubuntu release sources
-  apt::source { "${::lsbdistcodename}_release":
-    comment  => 'Main Ubuntu release',
-    location => 'http://us.archive.ubuntu.com/ubuntu',
-    release  => $::lsbdistcodename,
-    repos    => 'main restricted universe multiverse',
+  apt::source { "archive.ubuntu.com-${lsbdistcodename}":
+    location => 'http://archive.ubuntu.com/ubuntu',
+    key      => '630239CC130E1A7FD81A27B140976EAF437D05B5',
+    repos    => 'main universe multiverse restricted',
   }
 
-  apt::source { "${::lsbdistcodename}_updates":
-    comment  => 'Ubuntu updates',
-    location => 'http://us.archive.ubuntu.com/ubuntu',
-    release  => "${::lsbdistcodename}-updates",
-    repos    => 'main restricted universe multiverse',
+  apt::source { "archive.ubuntu.com-${lsbdistcodename}-security":
+    location => 'http://archive.ubuntu.com/ubuntu',
+    key      => '630239CC130E1A7FD81A27B140976EAF437D05B5',
+    repos    => 'main universe multiverse restricted',
+    release  => "${lsbdistcodename}-security"
   }
 
-  apt::source { "${::lsbdistcodename}_security":
-    comment  => 'Ubuntu security updates',
-    location => 'http://us.archive.ubuntu.com/ubuntu',
-    release  => "${::lsbdistcodename}-security",
-    repos    => 'main restricted universe multiverse',
+  apt::source { "archive.ubuntu.com-${lsbdistcodename}-updates":
+    location => 'http://archive.ubuntu.com/ubuntu',
+    key      => '630239CC130E1A7FD81A27B140976EAF437D05B5',
+    repos    => 'main universe multiverse restricted',
+    release  => "${lsbdistcodename}-updates"
+  }
+
+  apt::source { "archive.ubuntu.com-${lsbdistcodename}-backports":
+   location => 'http://archive.ubuntu.com/ubuntu',
+   key      => '630239CC130E1A7FD81A27B140976EAF437D05B5',
+   repos    => 'main universe multiverse restricted',
+   release  => "${lsbdistcodename}-backports"
   }
 
 }

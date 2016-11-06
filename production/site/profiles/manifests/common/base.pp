@@ -6,6 +6,10 @@ class profiles::common::base {
     content => "# This node is managed by Puppet ${::clientversion}\n# Environment: ${env}\n# Location: ${location}\n"
   }
 
+  package { 'software-properties-common':
+    ensure => installed,
+  }
+
   # common users
   users { 'common': }
 

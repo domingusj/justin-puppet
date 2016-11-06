@@ -2,11 +2,7 @@
 
 class profiles::common::debian_node {
 
-  class { 'apt':
-    update => {
-    frequency => 'daily',
-    },
-  }
+  include ::apt
 
   apt::source { 'puppetlabs':
   location => 'http://apt.puppetlabs.com',
@@ -27,7 +23,6 @@ class profiles::common::debian_node {
           'screen',
           'tree',
           'htop',
-          'software-properties-common',
           'build-essential',
       ]:
       ensure  => installed,
