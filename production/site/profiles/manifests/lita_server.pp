@@ -6,11 +6,12 @@ class profiles::lita_server {
   $lita_ruby_version = '2.2.5'
 
   user { 'lita':
-    ensure  => present,
-    comment => 'lita chat bot',
-    home    => '/opt/lita',
-    system  => true,
-    shell   => '/bin/bash',
+    ensure     => present,
+    comment    => 'lita chat bot',
+    home       => '/opt/lita',
+    system     => true,
+    shell      => '/bin/bash',
+    managehome => true,
   }
 
   file { '/opt/lita/.ruby-version':
