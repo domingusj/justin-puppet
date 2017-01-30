@@ -2,4 +2,4 @@ pipeline:
   build:
     image: czops/puppet-rake  
     commands:
-      - rake lint
+      - lint
