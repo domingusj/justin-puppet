@@ -1,3 +1,5 @@
-image: czops/puppet-rake  
-script:
-  - rake lint
+pipeline:
+  build:
+    image: czops/puppet-rake  
+    commands:
+      - rake lint
