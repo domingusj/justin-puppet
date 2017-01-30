@@ -2,4 +2,4 @@ pipeline:
   build:
     image: czops/puppet-rake
     commands:
-      - ls -al && pwd && /opt/puppetlabs/puppet/bin/rake lint
+      - /opt/puppetlabs/puppet/bin/rake lint
