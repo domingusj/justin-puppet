@@ -14,5 +14,3 @@ node default {
   if $::hostname =~ /^lita\d{1,2}$/     { include roles::lita }
 
 }
-
-        # this is a comment
