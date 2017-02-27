@@ -1,0 +1,12 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+before_install:
+- docker pull czops/puppet-rake
+
+script:
+- docker run -d czops/puppet-rake lint
