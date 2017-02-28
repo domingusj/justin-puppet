@@ -9,4 +9,4 @@ before_install:
 - docker pull czops/puppet-rake
 
 script:
-- docker run -d czops/puppet-rake lint
+  - docker run --rm -it -v $(pwd):/tmp/ czops/puppet-rake lint
