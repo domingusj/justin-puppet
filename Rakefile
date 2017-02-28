@@ -5,6 +5,7 @@ require 'rake/testtask'
 
 PuppetLint::RakeTask.new :lint do |config|
   config.ignore_paths = [
+      '**/vendor/**/*',
       '**/modules/apt/**/*',
       '**/modules/concat/**/*',
       '**/modules/curator/**/*',
