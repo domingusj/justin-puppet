@@ -1,4 +1,3 @@
-#Icinga server
 class profiles::icinga_server {
 
   $icinga_db_pw = hiera ('icinga_db_pw')
